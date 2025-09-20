@@ -37,18 +37,18 @@ make config-gcc
 make
 sudo make install
 yosys -V
-
+'''
 ---
 
 ### 3. Install Icarus verilog
 '''bash
 sudo apt install -y iverilog
 iverilog -v
-
+'''
 ---
 
 ###4. Install GTKwave
 '''bash
 sudo apt install -y gtkwave
 gtkwave --version
-
+'''
