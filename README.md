@@ -13,6 +13,8 @@ The first week was dedicated to installation of the necessary tools and getting 
  |     Yosys     | The synthesis engine for transforming Verilog into a gate-level netlist.|
  |iverolog|A high-speed simulator for design verification.|
  |GTKWave|A waveform viewer for debugging signal behavior.|
+ |NGspice|Circuit simulation and various other analysis.|
+ |Magic|Layout Design|
  
  ---
 
@@ -46,7 +48,7 @@ make
 sudo make install
 yosys -V
 ```
-![Yosys Installation Screenshot](yosys.png)
+![Yosys Installation Screenshot](images/yosys.png)
 ---
 
 #### 3. Install Icarus verilog
@@ -54,12 +56,47 @@ yosys -V
 sudo apt install -y iverilog
 iverilog -v
 ```
-![Iverilog initialization screenshot](iverilog.png)
+![Iverilog initialization screenshot](images/iverilog.png)
 ---
 
-### 4. Install GTKwave
+#### 4. Install GTKwave
 ```bash
 sudo apt install -y gtkwave
 gtkwave --version
 ```
-![GTKwave initialization screenshot](gtkwave.png)
+![GTKwave initialization screenshot](images/gtkwave.png)
+
+---
+
+#### 5. Install NGSPICE
+After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local
+directory, unpack it using:
+```bash
+tar -zxvf ngspice-37.tar.gz
+cd ngspice-37
+mkdir release
+cd release
+./configure --with-x --with-readline=yes --disable-debug
+make
+sudo make install
+```
+![NGSPICE initialization screen](images/ngspice.png)
+---
+
+#### 6. Install Magic
+```bash
+sudo apt-get install m4
+sudo apt-get install tcsh
+sudo apt-get install csh
+sudo apt-get install libx11-dev
+sudo apt-get install tcl-dev tk-dev
+sudo apt-get install libcairo2-dev
+sudo apt-get install mesa-common-dev libglu1-mesa-dev
+sudo apt-get install libncurses-dev
+git clone https://github.com/RTimothyEdwards/magic
+cd magic
+./configure
+make
+make install
+```
+![Magic Initialization screen](images/magic.png)
